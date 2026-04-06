@@ -123,6 +123,38 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* =============================================
+       CLEAN URL — no #hash in address bar
+       ============================================= */
+
+    // If page loaded with a hash (e.g. arriving from faq.html → index.html#services),
+    // scroll to the target and immediately strip the hash from the URL
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            setTimeout(() => {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        }
+        history.replaceState(null, '', window.location.pathname);
+    }
+
+    // Intercept all same-page anchor clicks and scroll without touching the URL
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, '', window.location.pathname);
+        });
+    });
+
+
+    /* =============================================
        STICKY NAV — adds .scrolled class on scroll
        ============================================= */
     const navbar = document.getElementById('navbar');

@@ -556,13 +556,10 @@ footer {
 
 /* Russian Manicure luxury note */
 .service-luxury-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    background: rgba(201, 168, 124, 0.1);
-    border: 1px solid rgba(201, 168, 124, 0.3);
-    border-radius: 12px;
-    padding: 0.85rem 1rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(201, 168, 124, 0.08);
+    border-radius: 0 8px 8px 0;
+    padding: 0.75rem 1rem;
     margin-bottom: 1.2rem;
     font-size: 0.85rem;
     color: var(--muted);
@@ -575,14 +572,6 @@ footer {
     font-weight: 500;
 }
 
-.luxury-dot {
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    margin-top: 0.42rem;
-}
 
 .service-list {
     list-style: none;
