@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Aftercare | Polished by Gissella</title>
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type"         content="website">
+    <meta property="og:url"          content="https://polishedbygissella.com/aftercare.html">
+    <meta property="og:title"        content="Nail Aftercare | Polished by Gissella">
+    <meta property="og:description"  content="Keep your nails looking fresh longer. Aftercare tips and guidelines from Polished by Gissella in Round Rock, TX.">
+    <meta property="og:image"        content="https://polishedbygissella.com/SarriahClassy.jpeg">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name"    content="Polished by Gissella">
+
+    <!-- ── Twitter / X Card ── -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Nail Aftercare | Polished by Gissella">
+    <meta name="twitter:description" content="Keep your nails looking fresh longer. Aftercare tips and guidelines from Polished by Gissella in Round Rock, TX.">
+    <meta name="twitter:image"       content="https://polishedbygissella.com/SarriahClassy.jpeg">
+
+    <!-- ── Aftercare Article Schema ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Nail Aftercare Guide — Polished by Gissella",
+      "description": "How to care for your gel nails after your appointment to maximise longevity and keep them looking fresh.",
+      "author": {
+        "@type": "Person",
+        "name": "Sarriah",
+        "url": "https://polishedbygissella.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Polished by Gissella",
+        "url": "https://polishedbygissella.com"
+      },
+      "url": "https://polishedbygissella.com/aftercare.html"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── Aftercare page-specific styles ── */
+        .page-hero {
+            min-height: 42vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 5% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .page-hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero-content h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .page-hero-content .hero-sub {
+            margin-top: 1rem;
+            margin-bottom: 0;
+            max-width: 520px;
+        }
+
+        /* Aftercare section */
+        .aftercare-section {
+            padding: 5rem 5% 7rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* Category label */
+        .aftercare-category {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 3rem 0 1.2rem;
+        }
+
+        .aftercare-category:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Accordion card */
+        .aftercare-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .aftercare-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(139, 107, 74, 0.08);
+        }
+
+        .aftercare-header {
+            padding: 1.6rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            gap: 1rem;
+        }
+
+        .aftercare-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .aftercare-icon {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+            flex-shrink: 0;
+            transition: transform var(--transition);
+        }
+
+        .aftercare-card.active .aftercare-icon {
+            transform: rotate(45deg);
+        }
+
+        .aftercare-body {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding: 0 2rem;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+        }
+
+        .aftercare-card.active .aftercare-body {
+            opacity: 1;
+            padding-bottom: 1.6rem;
+        }
+
+        .aftercare-body p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.75;
+            margin-bottom: 0.6rem;
+        }
+
+        .aftercare-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .aftercare-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .aftercare-body ul li {
+            font-size: 0.95rem;
+            color: var(--muted);
+            font-weight: 300;
+            line-height: 1.75;
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .aftercare-body ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Tip highlight */
+        .tip {
+            display: inline-block;
+            background: rgba(201, 168, 124, 0.12);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            padding: 0.6rem 1rem;
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 400;
+            width: 100%;
+        }
+
+        /* Bottom CTA */
+        .aftercare-cta {
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .aftercare-cta-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .aftercare-cta h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .aftercare-cta h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .aftercare-cta p {
+            color: var(--muted);
+            font-weight: 300;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        #navbar .nav-links a.active {
+            opacity: 1;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page transition overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Global aura background -->
+    <div class="bg-aura" aria-hidden="true">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-4"></div>
+        <div class="bg-orb bg-orb-5"></div>
+    </div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar">
+        <a href="index.html" class="logo">Polished by Gissella</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#services">Services</a>
+            <a href="index.html#gallery">Gallery</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#booking">Booking</a>
+            <a href="faq.html">FAQ</a>
+            <a href="aftercare.html" class="active">Aftercare</a>
+        </div>
+        <a href="index.html#booking" class="btn btn-nav">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="hero-eyebrow">Keep Them Fresh</span>
+            <h1>Nail <em>Aftercare.</em></h1>
+            <p class="hero-sub">Simple tips to protect your investment and keep your set looking its best between appointments.</p>
+        </div>
+    </section>
+
+    <!-- ========== AFTERCARE CONTENT ========== -->
+    <section class="aftercare-section fade-in-section">
+
+        <p class="aftercare-category">Right After Your Appointment</p>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>What should I do immediately after my appointment?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Your nails are fully cured when you leave, so you can go about your day normally. However, for the first few hours:</p>
+                <ul>
+                    <li>Avoid prolonged soaking in water (long baths, dishes, swimming)</li>
+                    <li>Be gentle with your nails — the product needs time to fully bond to your natural nail</li>
+                    <li>Avoid picking at or peeling the edges</li>
+                </ul>
+                <span class="tip">Tip: Apply cuticle oil as soon as you get home — it helps the product settle and keeps the surrounding skin hydrated.</span>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>Why do I need to avoid water right after?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Your natural nail can absorb water and expand slightly. In the first 24–48 hours, excess moisture under or around the product can weaken the adhesion and cause early lifting. The drier you keep them right after your appointment, the longer your set will last.</p>
+            </div>
+        </div>
+
+        <p class="aftercare-category">Daily Care</p>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>How often should I apply cuticle oil?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>At least once a day — ideally morning and night. Cuticle oil keeps the skin around your nails hydrated, prevents peeling and cracking, and helps maintain the flexibility of the product so it's less prone to chipping.</p>
+                <span class="tip">Tip: Keep a small cuticle oil pen in your bag so you can apply it throughout the day.</span>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>Should I wear gloves for household tasks?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Yes — especially for:</p>
+                <ul>
+                    <li>Washing dishes</li>
+                    <li>Cleaning with chemicals or harsh products</li>
+                    <li>Gardening or tasks involving dirt and grit</li>
+                </ul>
+                <p>Prolonged water exposure and cleaning chemicals are the two biggest causes of early lifting and chipping. A cheap pair of rubber gloves will make your set last noticeably longer.</p>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>Can I use hand lotion and sanitiser?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Hand lotion is fine and actually encouraged — just massage it into your hands and avoid rubbing it heavily around the nail edges. Hand sanitiser is also fine for occasional use, but the alcohol content can dry out the cuticles over time. Follow up with cuticle oil if you use it frequently.</p>
+            </div>
+        </div>
+
+        <p class="aftercare-category">What to Avoid</p>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>What can shorten the life of my set?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <ul>
+                    <li>Using your nails as tools (opening cans, peeling stickers, etc.)</li>
+                    <li>Picking or peeling at the product — this damages your natural nail</li>
+                    <li>Prolonged soaking in water (hot tubs, long baths)</li>
+                    <li>Harsh cleaning chemicals without gloves</li>
+                    <li>Acetone-based products near the nail edges</li>
+                    <li>Biting or chewing on your nails</li>
+                </ul>
+                <span class="tip">Tip: Use the pad of your finger, not the tip of your nail, whenever possible.</span>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>Can I use regular nail polish on top?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Yes, but use a non-acetone remover when taking it off. Regular acetone polish remover will break down gel and hard gel products. A gentle non-acetone remover is safe to use on the polish without affecting your set underneath.</p>
+            </div>
+        </div>
+
+        <p class="aftercare-category">Dealing with Breakage</p>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>What do I do if a nail breaks or lifts?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Don't panic — and don't try to fix it yourself by peeling or pulling. Here's what to do:</p>
+                <ul>
+                    <li>If it's a minor lift at the edge, keep it dry and DM me on Instagram — we can assess if it needs a quick fix</li>
+                    <li>If a nail breaks close to the nail bed, keep it covered and reach out as soon as possible</li>
+                    <li>Never peel or force the product off — this strips layers of your natural nail</li>
+                </ul>
+                <span class="tip">Tip: DM @PolishedByGissella on Instagram with a photo and I'll let you know if it needs an in-person fix or can wait until your next appointment.</span>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>Is some lifting normal?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Minor lifting at the very edge after 3–4 weeks is normal as your natural nail grows out. However, lifting within the first week typically points to one of the following:</p>
+                <ul>
+                    <li>Exposure to a lot of water in the first 24–48 hours</li>
+                    <li>Oily natural nails (let me know before your appointment so I can prep accordingly)</li>
+                    <li>Product contact with skin or cuticles during application</li>
+                </ul>
+                <p>If you experience consistent early lifting, mention it at your next appointment so the prep process can be adjusted.</p>
+            </div>
+        </div>
+
+        <p class="aftercare-category">When to Come Back</p>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>How do I know when it's time for a refill?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>Generally, refills are recommended every 3–4 weeks. Signs it's time to book:</p>
+                <ul>
+                    <li>Visible gap between the product and your cuticle</li>
+                    <li>Noticeable lifting at the edges</li>
+                    <li>Nails feel thinner or flexible near the base</li>
+                    <li>It's been more than 5 weeks since your last appointment</li>
+                </ul>
+                <span class="tip">Tip: Waiting too long between refills can make the removal process harder on your natural nails.</span>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>How many refills can I get before needing a full soak-off?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>A maximum of 2 refills are allowed per set for Hard Gel and Soft Builder Gel. After that, a full soak-off and fresh set is required to maintain the health, strength, and appearance of your nails. Stacking too many refills can lead to over-filing and thin, weakened natural nails.</p>
+            </div>
+        </div>
+
+        <div class="aftercare-card">
+            <div class="aftercare-header">
+                <h3>How do I care for my natural nails between sets?</h3>
+                <span class="aftercare-icon">+</span>
+            </div>
+            <div class="aftercare-body">
+                <p>If you're taking a break between sets:</p>
+                <ul>
+                    <li>Keep nails trimmed and filed to avoid snagging</li>
+                    <li>Continue using cuticle oil daily</li>
+                    <li>Use a nail strengthener or clear base coat to protect the nail surface</li>
+                    <li>Stay hydrated — nail health starts from the inside</li>
+                    <li>Avoid harsh chemicals and prolonged water exposure just as you would with a set</li>
+                </ul>
+                <span class="tip">Tip: Give your natural nails at least 1–2 weeks to breathe and recover before booking your next set, especially if they feel thin or flexible.</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========== BOTTOM CTA ========== -->
+    <section class="aftercare-cta fade-in-section">
+        <div class="aftercare-cta-inner">
+            <span class="section-eyebrow">Ready for Your Next Set?</span>
+            <h2>You're all set. <em>Let's book.</em></h2>
+            <p>Now that you know how to keep your nails looking their best, let's get your next appointment on the calendar.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                <a href="index.html#booking" class="btn">Book an Appointment</a>
+                <a href="faq.html" class="btn btn-outline">View FAQ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Polished by Gissella</a>
+                <p>Simply Elegant. Nothing less.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html#services">Services</a>
+                <a href="index.html#gallery">Gallery</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#booking">Book Now</a>
+                <a href="faq.html">FAQ</a>
+                <a href="aftercare.html">Aftercare</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/polishedbygissella" target="_blank" rel="noopener noreferrer">Instagram: @PolishedByGissella</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Polished by Gissella. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.aftercare-card');
+
+            cards.forEach(card => {
+                const header = card.querySelector('.aftercare-header');
+                const body   = card.querySelector('.aftercare-body');
+
+                header.addEventListener('click', () => {
+                    cards.forEach(other => {
+                        if (other !== card && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                            other.querySelector('.aftercare-body').style.maxHeight = null;
+                        }
+                    });
+
+                    card.classList.toggle('active');
+                    body.style.maxHeight = card.classList.contains('active')
+                        ? body.scrollHeight + 32 + 'px'
+                        : null;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
