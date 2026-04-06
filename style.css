@@ -554,6 +554,36 @@ footer {
     padding-bottom: 1.8rem;
 }
 
+/* Russian Manicure luxury note */
+.service-luxury-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    background: rgba(201, 168, 124, 0.1);
+    border: 1px solid rgba(201, 168, 124, 0.3);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.service-luxury-note strong {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.luxury-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 0.42rem;
+}
+
 .service-list {
     list-style: none;
 }
