@@ -523,14 +523,6 @@ button:focus-visible,
     box-shadow: 0 20px 44px -18px rgba(59, 36, 32, 0.28);
 }
 
-.service-photo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    background: var(--ivory);
-}
-
 .accordion-header {
     padding: 1.8rem 2rem;
     display: flex;
