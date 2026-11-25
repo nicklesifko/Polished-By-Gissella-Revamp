@@ -7,7 +7,7 @@
 
     <meta name="description" content="Got questions about booking, pricing, or nail care? Find all the answers here before your appointment with Polished by Gissella.">
     <link rel="canonical" href="https://polishedbygissella.com/faq.html">
-    <meta name="theme-color" content="#F8F4EF">
+    <meta name="theme-color" content="#3B2420">
 
     <!-- ── Open Graph (social media link previews) ── -->
     <meta property="og:type"        content="website">
@@ -56,12 +56,14 @@
             min-height: 42vh;
             display: flex;
             align-items: flex-end;
-            padding: 0 5% 5rem;
+            padding: 8.5rem 5% 5rem; /* clears the fixed nav */
             position: relative;
             overflow: hidden;
         }
 
-        .page-hero .aura-orb { z-index: 0; }
+        .page-hero {
+            border-bottom: 1px solid var(--card-border);
+        }
 
         .page-hero-content {
             position: relative;
@@ -81,11 +83,20 @@
             font-weight: 400;
             line-height: 1.05;
             letter-spacing: -0.02em;
+            color: var(--choc);
         }
 
         .page-hero-content h1 em {
             font-style: italic;
             color: var(--accent);
+        }
+
+        .page-hero-content .hero-eyebrow {
+            color: var(--accent);
+        }
+
+        .page-hero-content .hero-sub {
+            color: var(--muted);
         }
 
         .page-hero-content .hero-sub {
@@ -104,17 +115,14 @@
         .faq-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            border-radius: 4px;
             overflow: hidden;
             margin-bottom: 1rem;
             transition: transform var(--transition), box-shadow var(--transition);
         }
 
         .faq-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(139, 107, 74, 0.08);
+            box-shadow: 0 16px 36px -18px rgba(59, 36, 32, 0.25);
         }
 
         .faq-header {
@@ -193,6 +201,11 @@
         .faq-cta {
             padding: 6rem 5%;
             text-align: center;
+            background: var(--ivory);
+        }
+
+        .faq-cta h2 {
+            color: var(--choc);
         }
 
         .faq-cta-inner {
@@ -229,14 +242,6 @@
     <!-- Page transition overlay -->
     <div class="page-transition" id="pageTransition"></div>
 
-    <!-- Global aura background -->
-    <div class="bg-aura" aria-hidden="true">
-        <div class="bg-orb bg-orb-1"></div>
-        <div class="bg-orb bg-orb-2"></div>
-        <div class="bg-orb bg-orb-3"></div>
-        <div class="bg-orb bg-orb-4"></div>
-        <div class="bg-orb bg-orb-5"></div>
-    </div>
 
     <!-- ========== NAVIGATION ========== -->
     <nav id="navbar">
